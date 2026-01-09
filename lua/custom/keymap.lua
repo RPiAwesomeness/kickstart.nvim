@@ -41,3 +41,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader><leader>x', '<CMD>source %<CR>', { desc = 'Source current file' })
 vim.keymap.set('n', '<leader>x', ':.lua<CR>', { desc = 'Execute current lua file' })
 vim.keymap.set('v', '<leader>x', ':lua<CR>', { desc = 'Execute current lua selection' })
+
+-- Line movement
+
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==') -- move line up(n)
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==') -- move line down(n)
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv") -- move line up(v)
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv") -- move line down(v)
