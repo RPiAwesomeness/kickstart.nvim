@@ -22,6 +22,8 @@ vim.o.mouse = 'a'
 vim.o.showmode = false
 
 vim.o.foldmethod = 'expr'
+-- 0: all closed, 1: some closed, 99: all open
+vim.o.foldlevelstart = 1
 
 -- Indentation
 vim.o.shiftwidth = 4

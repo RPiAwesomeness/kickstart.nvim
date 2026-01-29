@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "nvim-lspconfig": {
+      "rev": "ad95655ec5d13ff7c728d731eb9fd39f34395a03",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "tokyonight.nvim": {
+      "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    }
+  }
+}
