@@ -35,3 +35,25 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
+
+function Sad(line_nr, from, to, fname)
+  vim.cmd(string.format("silent !sed -i '%ss/%s/%s/' %s", line_nr, from, to, fname))
+end
+
+change_alacritty_padding_augroup = vim.api.nvim_create_augroup('change-alacritty-folding', { clear = true })
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = change_alacritty_padding_augroup,
+  callback = function()
+    Sad('13', 14, 0, '~/.config/alacritty/alacritty.toml')
+    Sad('14', 14, 0, '~/.config/alacritty/alacritty.toml')
+  end,
+})
+
+vim.api.nvim_create_autocmd('VimLeavePre', {
+  group = change_alacritty_padding_augroup,
+  callback = function()
+    Sad('13', 0, 14, '~/.config/alacritty/alacritty.toml')
+    Sad('14', 0, 14, '~/.config/alacritty/alacritty.toml')
+  end,
+})
