@@ -26,8 +26,8 @@ vim.o.foldmethod = 'expr'
 vim.o.foldlevelstart = 1
 
 -- Indentation
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
 vim.o.expandtab = true
 
 -- Sync clipboard between OS and Neovim.
@@ -709,9 +709,9 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
+        typescriptreact = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
@@ -734,7 +734,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
 
